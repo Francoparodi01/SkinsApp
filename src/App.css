@@ -1,0 +1,100 @@
+.navCont{
+  background: #281111
+  }
+
+.navText{
+  color: #f5f5f5;
+}
+
+a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
+  color: white;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #004f84;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+  margin-left: 50%;
+  margin-left: 60px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+.card-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(50,50,50);
+  background: -moz-linear-gradient(180deg, rgba(50,50,50,0.48082983193277307) 11%, rgba(177,177,177,0) 91%);
+  background: -webkit-linear-gradient(180deg, rgba(50,50,50,0.48082983193277307) 11%, rgba(177,177,177,0) 91%);
+  background: linear-gradient(180deg, rgba(50,50,50,0.48082983193277307) 11%, rgba(177,177,177,0) 91%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#323232",endColorstr="#b1b1b1",GradientType=1);
+  gap: 30px;
+  padding: 15px;
+  width: 400px;
+  height: 500px;
+  box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.59);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.separador{
+  border: none;
+  background-color: #000;
+  margin: 1px;
+  height: 1px;
+  width: 50%;
+  opacity: 1;
+  box-shadow: 10px 6px 6px #000
+}
+
+.separador:hover{
+  transition: all 0.3 ease;
+  cursor: pointer;
+  
+}
+
+.card-title{
+  /* background-color: black; */
+  color: rgb(0, 0, 0);
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.04em;
+      font-family: "Open Sans'";
+      list-style: none;
+      display: flex;
+      align-items: center;
+  }
+
+  .card-img{
+      max-height: 350px;
+      border: #000;
+        border-top-width: 10px;
+        border-right-width: 1em;
+        border-bottom-width: thick;
+        border-left-width: thin;
+}
+
+.card-container:hover{
+  transform: scale(1.06);
+  transition: 0.3s ease;
+}
+
+.item-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 30px;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+}
