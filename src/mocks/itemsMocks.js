@@ -81,5 +81,3 @@ export const Items =[
         img: m4Emp,
     }
 ]
-
-export default Items

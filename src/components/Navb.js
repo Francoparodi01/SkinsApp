@@ -49,7 +49,7 @@ const Navb = () => {
               </NavDropdown.Item>
 
             </NavDropdown>
-            <Nav.Link className='navText text-light'>
+            <Nav.Link className='navText text-light' >
               Best skins prices
             </Nav.Link>
           </Nav>

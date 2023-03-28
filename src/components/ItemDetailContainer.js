@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
   }, []);
 
   if (!item) {
-    return 
+    return
       <loader/>
   }
 

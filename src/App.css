@@ -1,5 +1,5 @@
 .navCont{
-  background: #281111
+  background: #4d2c5f
   }
 
 .navText{
@@ -34,11 +34,11 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgb(50,50,50);
-  background: -moz-linear-gradient(180deg, rgba(50,50,50,0.48082983193277307) 11%, rgba(177,177,177,0) 91%);
-  background: -webkit-linear-gradient(180deg, rgba(50,50,50,0.48082983193277307) 11%, rgba(177,177,177,0) 91%);
-  background: linear-gradient(180deg, rgba(50,50,50,0.48082983193277307) 11%, rgba(177,177,177,0) 91%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#323232",endColorstr="#b1b1b1",GradientType=1);
+  background: rgb(168,119,204);
+  background: -moz-linear-gradient(180deg, rgba(168,119,204,0.6573004201680672) 23%, rgba(255,255,255,0.03545168067226889) 91%);
+  background: -webkit-linear-gradient(180deg, rgba(168,119,204,0.6573004201680672) 23%, rgba(255,255,255,0.03545168067226889) 91%);
+  background: linear-gradient(180deg, rgba(168,119,204,0.6573004201680672) 23%, rgba(255,255,255,0.03545168067226889) 91%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a877cc",endColorstr="#ffffff",GradientType=1);
   gap: 30px;
   padding: 15px;
   width: 400px;
@@ -46,6 +46,7 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
   box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.59);
   transition: 0.3s ease;
   cursor: pointer;
+  border-radius: 6px;
 }
 .separador{
   border: none;
@@ -55,12 +56,6 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
   width: 50%;
   opacity: 1;
   box-shadow: 10px 6px 6px #000
-}
-
-.separador:hover{
-  transition: all 0.3 ease;
-  cursor: pointer;
-  
 }
 
 .card-title{
