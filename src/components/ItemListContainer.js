@@ -1,31 +1,25 @@
-import React, {useState} from 'react'
-import ItemList from './ItemList'
-import {Items} from '../mocks/itemsMocks'
-import Loader from './Loader';
+import React, {useState, useEffect} from 'react';
+import ItemList from './ItemList';
+import {useParams} from 'react-router-dom';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 
 
-const ItemListContainer = ({ greeting }) => {
-  const [products, setProducts] = useState([]);
-  const [hasProduct, setHasProduct] = useState(false);
+const ItemListContainer = ( ) => {
+  const [productos, setProductos] = useState([]);
 
-  const listproduct = new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(Items);
-    }, 3000)
-  );
-
-  listproduct
-    .then((data) => setProducts(data))
-    .then((data) => setHasProduct(!data));
-
-  console.log(products);
-
-  return (
-      !hasProduct ? (
-        <Loader/>
-      ) : (
-        <ItemList products={products}/>
-      )
-  );
+  const {categoryId} = useParams();
+  useEffect(() => {
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, "items")
+    if (categoryId) {
+        const queryFilter = query(queryCollection, where('category', '==', categoryId))
+        getDocs(queryFilter)
+          .then(res => setProductos(res.docs.map(productos =>({id: productos.id, ...productos.data()}))) )    
+      }else{
+        getDocs(queryCollection)
+          .then(res => setProductos(res.docs.map(productos =>({id: productos.id, ...productos.data()}))) )   
+      }
+}, [categoryId]);
+return <ItemList products={productos} />;
 };
 export default ItemListContainer

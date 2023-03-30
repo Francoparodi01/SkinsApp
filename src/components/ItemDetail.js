@@ -4,23 +4,23 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import "../App.css"
 
-const ItemDetail = ({ product }) => {
+const ItemDetail = ({ item }) => {
 
   const { addItem } = useContext(CartContext);
 
-  console.log(product)
+  console.log(item)
 
   return (
     <div className="detail-container">
         <img
             className="detail-img"
-            src= {product.img}
-            alt={product.name}
+            src= {item.img}
+            alt={item.name}
         />
         <div className="detail-subcontainer">
-            <h1>{product.name}</h1>
+            <h1>{item.name}</h1>
             <button>Finalizar compra</button>
-            <ItemCount stock={product.stock} initial={1} />
+            <ItemCount stock={item.stock} initial={1} />
         </div>
     </div>
 );

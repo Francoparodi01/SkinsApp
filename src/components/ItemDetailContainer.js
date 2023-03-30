@@ -6,20 +6,24 @@ import { Items } from "../mocks/itemsMocks";
 import Loader from "./Loader";
 import Item from "./Item";
 
-const ItemDetailContainer = () => {
-  const [item, setItem] = useState(null);
+const ItemDetailContainer = ( {product} ) => {
+  const [productDetail, setProductDetail] = useState({})
+  const {productId} = useParams()
+  
 
-  useEffect(() => {
-    new Promise((resolve) => setTimeout(() => resolve(Item), 2000)).then(
-      (data) => setItem(data)
-    );
-  }, []);
+  useEffect(()=> {
+      const querydb = getFirestore();
+      const queryDoc = doc(querydb, "items", productId)
+      getDoc(queryDoc)
+      .then(res => setProductDetail({id: res.id, ...res.data()}))
+  }, [productId])
 
-  if (!item) {
+
+  if (!productDetail) {
     return <Loader/>
   }
 
-  return <ItemDetail item={item} />;
+  return <ItemDetail item={productDetail} />;
 }
   export default ItemDetailContainer;
   
