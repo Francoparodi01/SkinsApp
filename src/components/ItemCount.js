@@ -23,11 +23,11 @@ export const ItemCount = () => {
     const {count,increase,reset,decrease} = useCounter()
 
     return (
-    <div>
-        <button onClick={decrease}>-</button>
-        <h2>{count}</h2>
-        <button onClick={increase}>+</button>
-        <button onClick={reset}>borrar</button>
+    <div className='item-count'>
+        <button className='decrement' onClick={decrease}>-</button>
+        <h2 className='count'>{count}</h2>
+        <button className='increment' onClick={increase}>+</button>
+        <button className='' onClick={reset}>borrar</button>
     </div>
     );
 };
