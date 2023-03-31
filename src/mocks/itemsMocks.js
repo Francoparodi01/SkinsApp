@@ -10,7 +10,7 @@ import m4Emp from "../assets/M4A4Emperador.png";
 export const Items =[
     {
         id:1,
-        name: "AK-47 Asiimov",
+        name: "AK-47 Fire serpent",
         category: "Rifle",
         wear: "Minimal wear",
         stock: 12,

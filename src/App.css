@@ -127,12 +127,12 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
   font-size: 16px;
   line-height: 1.5;
 }
+
 .item-count {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .count {
   font-size: 20px;
   font-weight: bold;
@@ -142,28 +142,45 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
 }
 
 .decrement,
-.increment {
+.increment,
+.reset,
+.mostrar-detalle {
   background-color: #f2f2f2;
   border: 1px solid #ccc;
   color: #333;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   padding: 5px 10px;
   user-select: none;
 }
 
 .decrement:hover,
-.increment:hover {
+.increment:hover,
+.reset:hover,
+.mostrar-detalle:hover {
   background-color: #e6e6e6;
 }
 
-.product {
-	display: grid;
-	grid-template-columns: 0.9fr 1fr;
-	margin: auto;
-	padding: 2.5em 0;
-	min-width: 600px;
-	background-color: white;
-	border-radius: 5px;
+.cardContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.summary{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-left: 10px;
+  text-decoration: underline;
+  border-bottom: 1px #999;
+}
+.item-name{
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "Open Sans";
+}
+#li-item{
+  border-top: none;
 }
