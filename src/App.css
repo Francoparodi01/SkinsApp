@@ -17,7 +17,6 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
   width: 80px;
   height: 80px;
   animation: spin 1s linear infinite;
-  margin-left: 50%;
 }
 
 @keyframes spin {
@@ -172,7 +171,7 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
   line-height: 2rem;
   margin-left: 10px;
   text-decoration: underline;
-  border-bottom: 1px #999;
+  border-bottom: 1px  #999;
 }
 .item-name{
   display: flex;
@@ -183,4 +182,99 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
 }
 #li-item{
   border-top: none;
+}
+.linkCard{
+  text-decoration: none;
+  color: #6f6f6f;
+}
+.linkCard:hover{
+  transition: 1ms ease;
+  color: #f07eff;
+}
+.card {
+  width: 30rem;
+  height: 20rem;
+  perspective: 1000px;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-out;
+}
+
+.card-front {
+  background: rgb(255,255,255);
+  background: -moz-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(69,0,120,0.1923144257703081) 100%);
+  background: -webkit-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(69,0,120,0.1923144257703081) 100%);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(69,0,120,0.1923144257703081) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back {
+  background-color: #87CEEB;
+  transform: rotateY(-180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover .card-front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.tabla-valores{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+table td {
+  padding: 0 10px;
+}
+
+table td:first-child {
+  text-align: right;
+}
+.card-ind{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
+.text-item{
+  display: flex;
+  justify-content: center;
+}
+.card-img-ind{
+  width: 320px;
+  height: 173px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.card-back{
+  background-color: #000;
+  color: white;
+}
+.icon-cart{
+  height: 38px;
+    width: 110px;
+    display: block;
+    color: white;
 }

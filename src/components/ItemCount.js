@@ -1,35 +1,27 @@
 import React, {useState} from 'react'
-
-    
-const useCounter = () =>{
+import { CartContext, useCartContext } from "../context/CartContext";
 
 
-    const [count, setCount] = useState(0)
-    const decrease = () => setCount (count - 1)
-    const reset = () => setCount(0)
-    const increase = () => setCount (count + 1)
+export const ItemCount = ({onAdd, initial, stock }) => {
 
-    return{
-        count,
-        increase,
-        reset,
-        decrease
+    const [count, setCount] = useState(initial);
+
+    const decrease  = () =>{
+        setCount(count - 1); 
     }
-    
-}
+
+    const increase  = () =>{
+        setCount(count + 1); 
+    }
 
 
-export const ItemCount = () => {
-
-    const {count,reset,decrease, increase} = useCounter()
-    
 
     return (
     <div className='item-count'>
-        <button className='decrement' onClick={decrease}>-</button>
+        <button className='decrement' onClick={decrease} disabled={count <=1} >-</button>
         <h2 className='count'>{count}</h2>
-        <button className='increment' onClick={increase}>+</button>
-        <button className='reset' onClick={reset}>borrar</button>
+        <button className='increment' onClick={increase} disabled={count >= stock}>+</button>
+        <button className='reset' disabled={stock <= 0} onClick={()=> onAdd(count)}>Agregar al carrito</button>
     </div>
     );
 };

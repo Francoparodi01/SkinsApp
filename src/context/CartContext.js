@@ -14,36 +14,25 @@ export const useCartContext = () =>useContext(CartContext);
 
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
 
-    const addProduct = (item, newQuantity) =>{
-        let newCart;
-        let product = cart.find(product => product.id === item.id);
-        if (product) {
-          product.newQuantity += newQuantity;
-          newCart = [...cart]
-        }else{
-          product = {...item, newQuantity: newQuantity}
-          newCart = [...cart, product]
-        }
-        setCart(newCart)
-    }
-    console.log("carrito", cart);
-
-
-    const totalPrice = () =>{
-      return cart.reduce((prev, act) => prev + act.newQuantity * act.price, 0).toFixed(2)
+    const addProduct = (item, newQuantity) => {
+      const newCar = cart.filter(prod => prod.id !== item.id);
+      newCar.push ({...item, quantity : newQuantity});
+      setCart(newCar)
     }
 
-    const totalProducts = () =>{cart.reduce((acumulador, productoActual) => acumulador + productoActual.newQuantity, 0).toFixed(2)};
+    console.log('carrito: ', cart)
+
+
 
 
   return (
     <CartContext.Provider value={{
-        addProduct,
+        //addItem,
         clearCart,
         isInCart,
         removeProduct,
-        totalPrice,
-        totalProducts,
+        //totalPrice,
+        //totalProducts,
         cart
     }}>
         {children}

@@ -1,53 +1,80 @@
-import React, { useState} from "react";
+import React, { useState, useContext} from "react";
 import ItemCount from "./ItemCount";
-import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext, useCartContext } from "../context/CartContext";
 import "../App.css"
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { useNavigate } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
-    const [count, setCount] = useState(1);
-    const [currentStock, setCurrentStock] = useState(item.stock);
-    const maxQuantity = currentStock;
-    const { addItem } = useContext(CartContext);
-    const [showDetail, setShowDetail] = useState(false);
-  
-    const toggleDetail = () => {
-      setShowDetail(!showDetail);
-    };
+  const { addItem } = useContext(CartContext);
+  const [count, setCount] = useState(1);
+  const [currentStock, setCurrentStock] = useState(item.stock);
+  const maxQuantity = currentStock;
+  const navigate = useNavigate();
+
+ const [goToCart, setGoToCart] = useState(false);
+ const {addProduct} = useCartContext();
 
 
-  function handleCount(type) {
-    if (type === "plus" && count < maxQuantity) setCount(count + 1);
-    if (type === "minus" && count > 1) setCount(count - 1);
-  }
 
-  function handleAdd() {
-    if (currentStock < count) alert("No hay suficiente stock de este producto");
-    else {
-      setCurrentStock(currentStock - count);
-      addItem(item, count);
+    const onAdd = (quantity) =>{
+      setGoToCart(true);
+      addProduct(item, quantity)
+      console.log("agregaste al carrito")
     }
-  }
+
+
+  
 
   return (
-  <div className="cardContainer">
-    <Card style={{ width: '18rem', margin:"15px" }}>
-      <Card.Img variant="top" src={item.img} />
-      <Card.Body>
-        <Card.Title className="item-name">{item.name}</Card.Title>
-      </Card.Body>
-      <hr className='separador2'/> 
-          <p className="summary">Summary</p>
-      <ListGroup className="list-group-flush" id="li-item">
-        <ListGroup.Item>Category: {item.category}</ListGroup.Item>
-        <ListGroup.Item>Wear: {item.wear}</ListGroup.Item>
-        <ListGroup.Item>stock: {item.stock}</ListGroup.Item>
-      </ListGroup>
-    </Card>
-    <ItemCount stock={item.stock} initial={1} />
-  </div>  
+<div >
+  <div className="card-ind">
+    <div className="card">
+      <div className="card-front">
+        <img className="card-img-ind" alt={item.name} src={item.img}></img>
+      </div>
+    <div className="card-back">
+      <table className="tabla-valores">
+        <tbody>
+          <tr>
+          <td>Category:</td>
+          <td>{item.category}</td>
+          </tr>
+          <tr>
+          <td>Wear:</td>
+          <td>{item.wear}</td>
+          </tr>
+          <tr>
+          <td>Stock:</td>
+          <td>{item.stock}</td>
+          </tr>
+          <tr>
+          <td>finish:</td>
+          <td>{item.finish}</td>
+          </tr>
+          <tr>
+          <td>Gun:</td>
+          <td>{item.gun}</td>
+          </tr>
+          <tr>
+          <td>Type:</td>
+          <td>{item.type}</td>
+          </tr>
+          <tr>
+          <td>Price:</td>
+          <td>${item.price}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+  <div>
+    <h2 className="text-item">{item.name}</h2>
+
+    <ItemCount count={count} initial={1} stock={item.stock} onAdd={onAdd}/>
+  </div>
+</div>
+
   );
 }
   export default ItemDetail;
