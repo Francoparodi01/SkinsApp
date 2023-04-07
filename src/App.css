@@ -1,5 +1,5 @@
 .navCont{
-  background: #4d2c5f
+  background: #8B85B0
   }
 
 .navText{
@@ -32,16 +32,16 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgb(168,119,204);
-  background: -moz-linear-gradient(180deg, rgba(168,119,204,0.6573004201680672) 23%, rgba(255,255,255,0.03545168067226889) 91%);
-  background: -webkit-linear-gradient(180deg, rgba(168,119,204,0.6573004201680672) 23%, rgba(255,255,255,0.03545168067226889) 91%);
-  background: linear-gradient(180deg, rgba(168,119,204,0.6573004201680672) 23%, rgba(255,255,255,0.03545168067226889) 91%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a877cc",endColorstr="#ffffff",GradientType=1);
+  background: rgb(152,159,206);
+  background: -moz-linear-gradient(180deg, rgba(152,159,206,1) 0%, rgba(255,255,255,0.03545168067226889) 74%);
+  background: -webkit-linear-gradient(180deg, rgba(152,159,206,1) 0%, rgba(255,255,255,0.03545168067226889) 74%);
+  background: linear-gradient(180deg, rgba(152,159,206,1) 0%, rgba(255,255,255,0.03545168067226889) 74%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#989fce",endColorstr="#ffffff",GradientType=1);
   gap: 30px;
   padding: 15px;
   width: 400px;
   height: 500px;
-  box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.59);
+  box-shadow: 10px 10px 11px 0px #908EBA;
   transition: 0.3s ease;
   cursor: pointer;
   border-radius: 6px;
@@ -158,7 +158,8 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
 .increment:hover,
 .reset:hover,
 .mostrar-detalle:hover {
-  background-color: #e6e6e6;
+  background-color: #9292BF;
+  transition: ease 1s;
 }
 
 .cardContainer{
@@ -171,7 +172,7 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
   line-height: 2rem;
   margin-left: 10px;
   text-decoration: underline;
-  border-bottom: 1px  #999;
+  border-bottom: 1px  #a2a7ff;
 }
 .item-name{
   display: flex;
@@ -208,13 +209,36 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
 }
 
 .card-front {
-  background: rgb(255,255,255);
-  background: -moz-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(69,0,120,0.1923144257703081) 100%);
-  background: -webkit-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(69,0,120,0.1923144257703081) 100%);
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(69,0,120,0.1923144257703081) 100%);
+  background: rgb(152,159,206);
+  background: -moz-linear-gradient(180deg, rgba(152,159,206,1) 0%, rgba(255,255,255,0.03545168067226889) 74%);
+  background: -webkit-linear-gradient(180deg, rgba(152,159,206,1) 0%, rgba(255,255,255,0.03545168067226889) 74%);
+  background: linear-gradient(180deg, rgba(152,159,206,1) 0%, rgba(255,255,255,0.03545168067226889) 74%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#989fce",endColorstr="#ffffff",GradientType=1);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card-front::before{
+  content: "";
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(to bottom, #313131, #ffffff);
+  border-radius: 15px;
+  opacity: 0.7;
+}
+.card-front::after{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -2;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #fff);
+  border-radius: 20px;
 }
 
 .card-back {
@@ -233,13 +257,6 @@ a#navbarScrollingDropdown\ dropdown-menu-right\ textDropdown {
   transform: rotateY(0deg);
 }
 
-button {
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
 .tabla-valores{
   display: flex;
   align-items: center;
@@ -283,12 +300,13 @@ table td:first-child {
   color: white;
   margin: 18px;
 }
-.botonCarrito{
+/*.botonCarrito{
   padding: 0.3rem;
       background: #b68ce4;
-      border-width: 2px;
+      border-width: 1px;
       box-shadow: 2px 3px 5px 0px rgb(0 0 0);
   }
+  */
 .botonCarrito:hover{
   background-color: b68ce4;
   color: whitesmoke;
@@ -300,4 +318,77 @@ table td:first-child {
   flex-direction: column;
   align-items: center;
   margin: 20px;
+}
+.item-cart{
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin: 10px;
+
+}
+.item-cart img {
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+}
+.item-details{
+  flex: 1;
+}
+.cart-item-name{
+  margin: 0;
+  font-size: 18px;
+}
+.cart-item-details {
+  margin: 5px 0;
+}
+.remove-btn {
+  background: none;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.item-cart:hover {
+  box-shadow: 0 0 17px #989FCE;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.remove-btn:hover {
+  background: #7D6B91;
+  color: #fff;
+  transition: background 0.3s ease-in-out;
+}
+.botonCarrito{
+  background: linear-gradient(to bottom right, #7D6B91, #7F97CC);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.botonCarrito:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(183, 71, 239, 0.5), .125rem .125rem 1rem rgba(90, 120, 255, 0.5);
+}
+
+.botonCarrito:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(197, 71, 239, 0.5), .125rem .125rem 1rem rgba(90, 153, 255, 0.5);
 }
