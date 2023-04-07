@@ -5,23 +5,20 @@ import "../App.css"
 import { useNavigate } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
-  const { addItem } = useContext(CartContext);
+  const { addProduct } = useContext(CartContext);
   const [count, setCount] = useState(1);
   const [currentStock, setCurrentStock] = useState(item.stock);
   const maxQuantity = currentStock;
   const navigate = useNavigate();
 
  const [goToCart, setGoToCart] = useState(false);
- const {addProduct} = useCartContext();
 
 
 
     const onAdd = (quantity) =>{
       setGoToCart(true);
       addProduct(item, quantity)
-      console.log("agregaste al carrito")
     }
-
 
   
 

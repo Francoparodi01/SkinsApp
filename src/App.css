@@ -277,4 +277,27 @@ table td:first-child {
     width: 110px;
     display: block;
     color: white;
+    margin-bottom: -20px;
+}
+.cart-counter{
+  color: white;
+  margin: 18px;
+}
+.botonCarrito{
+  padding: 0.3rem;
+      background: #b68ce4;
+      border-width: 2px;
+      box-shadow: 2px 3px 5px 0px rgb(0 0 0);
+  }
+.botonCarrito:hover{
+  background-color: b68ce4;
+  color: whitesmoke;
+  transform: scale(1.06);
+  transition: 0.3s ease;
+}
+.div-carrito-vacio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }

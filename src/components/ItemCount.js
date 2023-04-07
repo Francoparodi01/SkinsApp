@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import { CartContext, useCartContext } from "../context/CartContext";
+import { useEffect } from 'react';
 
 
 export const ItemCount = ({onAdd, initial, stock }) => {
 
-    const [count, setCount] = useState(initial);
+    const [count, setCount] = useState(parseInt(initial));
 
     const decrease  = () =>{
         setCount(count - 1); 
@@ -14,7 +15,9 @@ export const ItemCount = ({onAdd, initial, stock }) => {
         setCount(count + 1); 
     }
 
-
+    useEffect(() =>{
+        setCount(parseInt(initial));
+    }, [initial])
 
     return (
     <div className='item-count'>

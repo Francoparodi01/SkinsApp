@@ -1,19 +1,31 @@
 import React from 'react'
-import {BsCart} from 'react-icons/bs';
+import { useCartContext } from '../context/CartContext'
 import { useNavigate } from 'react-router-dom';
+import ItemCart from './ItemCart';
 
 const Cart = () => {
 
+    const {cart, totalPrice} = useCartContext();
     const navigate = useNavigate();
+    const home = () => {
+        navigate("/"); 
+    };
 
-    const handleNavigate = () =>{
-      navigate ((`./Cart`))
+    if(cart.length === 0){
+        return (
+            <div className='div-carrito-vacio'>
+                <p>No hay elementos en el carrito</p>
+                <button className='botonCarrito' onClick={home}>Comprar productos</button>
+            </div>
+        );
     }
 
   return (
-    <div className='div-cart' onClick={handleNavigate}>
-        <BsCart className='icon-cart'/>
-    </div>
+    <>
+        {
+            cart.map(product => <ItemCart key={product.id} product={product}> </ItemCart>)
+        }
+    </>
   )
 }
 

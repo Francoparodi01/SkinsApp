@@ -8,6 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import {GiAk47} from 'react-icons/gi'
 import '../App.css'
 import Cart from './Cart';
+import CartWidget from './CartWidget';
 
 export const ThemeContext = createContext(null)
 
@@ -54,7 +55,7 @@ const Navb = () => {
               Best skins prices
             </Nav.Link>
           </Nav>
-          <Cart/>
+          <CartWidget/>
           <Form className="d-flex">
             <Form.Control
               type="search"
