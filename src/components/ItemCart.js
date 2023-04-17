@@ -10,8 +10,8 @@ const ItemCart = ({product}) => {
         <div className='item-details'>
             <p className='cart-item-name'>Titulo: {product.name}</p>
             <p className='cart-item-details'>Cantidad: {product.quantity}</p>
-            <p className='cart-item-details'>Precio unidad: {product.price}</p>
-            <p className='cart-item-details'>Subtotal: ${product.quantity * product.price}</p>
+            <p className='cart-item-details'>Precio unidad: {parseInt(product.price) }</p>
+            <p className='cart-item-details'>Subtotal: ${product.quantity * parseInt(product.price)}</p>
             <button className='remove-btn' onClick={()=>removeProduct(product.id)}>Eliminar</button>
         </div>
     </div>

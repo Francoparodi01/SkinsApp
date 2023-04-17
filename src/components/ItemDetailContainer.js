@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useParams } from "react-router-dom";
-import { Items } from "../mocks/itemsMocks";
 import Loader from "./Loader";
-import Item from "./Item";
+import ItemCount from "./ItemCount";
 
 const ItemDetailContainer = ( {product} ) => {
   const [productDetail, setProductDetail] = useState({})

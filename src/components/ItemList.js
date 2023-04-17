@@ -1,19 +1,23 @@
 import React from 'react';
-import { Items } from '../mocks/itemsMocks';
 import Item from './Item';
 import Loader from './Loader';
 import "../App.css"
+import ArrowDropdown from './ArrowDropdown';
 
 const ItemList = ({ products }) => {
     return (
-        <div className='item-container'>
+      <div>
+          <ArrowDropdown/>
+        <div className='item-container '>
+
           {products.length ? products.map(product => {
-              return <Item key={product.id} product={product}/>
+            return <Item key={product.id} product={product}/>
           })
           : 
           <Loader/>
         }
         </div>
+      </div>
       );
     };
   

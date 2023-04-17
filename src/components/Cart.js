@@ -25,6 +25,11 @@ const Cart = () => {
         {
             cart.map(product => <ItemCart key={product.id} product={product}> </ItemCart>)
         }
+        <div className='total-price-container'>
+            <p className='total-price'>
+                Precio total: ${parseInt(totalPrice())}
+            </p>
+        </div>
     </>
   )
 }

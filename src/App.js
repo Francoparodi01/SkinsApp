@@ -11,6 +11,8 @@ import {
   Route,
 } from "react-router-dom";
 import CartProvider from './context/CartContext';
+import Footer from './components/Footer';
+import ArrowDropdown from './components/ArrowDropdown';
 
 export const CartContext = React.createContext('');
 
@@ -19,15 +21,16 @@ export const CartContext = React.createContext('');
 function App() {
   return(
     <BrowserRouter>
-      <CartProvider>
-        <Navb/>
-          <Routes>
-            <Route path="/" element={<ItemListContainer/>}/>
-            <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
-            <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
-            <Route path='/cart' element={<Cart/>}/>
-          </Routes>
-      </CartProvider>
+        <CartProvider>
+          <Navb/>
+            <Routes>
+              <Route path="/" element={<ItemListContainer/>}/>
+              <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
+              <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
+              <Route path='/cart' element={<Cart/>}/>
+            </Routes>
+        </CartProvider>
+          <Footer/>
     </BrowserRouter>
   );
 }

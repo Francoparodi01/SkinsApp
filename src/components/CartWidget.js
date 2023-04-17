@@ -13,6 +13,9 @@ const CartWidget = () => {
       navigate ((`./Cart`))
     }
 
+    
+
+
   return (
     <div className='div-cart' onClick={handleNavigate}>
         <BsCart className='icon-cart'/> 

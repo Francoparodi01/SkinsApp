@@ -1,25 +1,18 @@
 import React, { useState, useContext} from "react";
 import ItemCount from "./ItemCount";
-import { CartContext, useCartContext } from "../context/CartContext";
+import { CartContext} from "../context/CartContext";
 import "../App.css"
-import { useNavigate } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
   const { addProduct } = useContext(CartContext);
   const [count, setCount] = useState(1);
   const [currentStock, setCurrentStock] = useState(item.stock);
-  const maxQuantity = currentStock;
-  const navigate = useNavigate();
+  const [goToCart, setGoToCart] = useState(false);
 
- const [goToCart, setGoToCart] = useState(false);
-
-
-
-    const onAdd = (quantity) =>{
-      setGoToCart(true);
-      addProduct(item, quantity)
-    }
-
+  const onAdd = (quantity) =>{
+    setGoToCart(true);
+    addProduct(item, quantity)
+  }
   
 
   return (

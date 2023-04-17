@@ -1,4 +1,4 @@
-import React, { createContext} from 'react'
+import React, { createContext, useContext} from 'react'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -7,15 +7,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {GiAk47} from 'react-icons/gi'
 import '../App.css'
-import Cart from './Cart';
 import CartWidget from './CartWidget';
-
-export const ThemeContext = createContext(null)
+import ArrowDropdown from './ArrowDropdown';
 
 const Navb = () => {
 
   return (
-    <Navbar className= 'navCont' expand="lg">
+    <Navbar className= 'navCont' expand="lg" >
       <Container fluid> 
         <GiAk47 style={{height: '46px', width:'44px', marginRight:'10px', color: 'whitesmoke'}}/>
           <Navbar.Brand className='navText' href="/">Csgo Skins</Navbar.Brand>
@@ -49,22 +47,12 @@ const Navb = () => {
               <NavDropdown.Item href="#action5">
                 $101 and above
               </NavDropdown.Item>
-
-            </NavDropdown>
+            </NavDropdown>            
             <Nav.Link className='navText text-light' >
               Best skins prices
             </Nav.Link>
           </Nav>
           <CartWidget/>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="light">Search</Button>
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
