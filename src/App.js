@@ -12,8 +12,6 @@ import {
 } from "react-router-dom";
 import CartProvider from './context/CartContext';
 import Footer from './components/Footer';
-import ArrowDropdown from './components/ArrowDropdown';
-
 export const CartContext = React.createContext('');
 
 

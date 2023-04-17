@@ -1,14 +1,12 @@
-import React, { createContext, useContext} from 'react'
-import Button from 'react-bootstrap/Button';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {GiAk47} from 'react-icons/gi'
 import '../App.css'
 import CartWidget from './CartWidget';
-import ArrowDropdown from './ArrowDropdown';
+
 
 const Navb = () => {
 
