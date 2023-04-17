@@ -1,10 +1,6 @@
 import React from 'react';
 
 const DropdownMenu = ({data}) => {
-
-
-
-
   return (
     <div className='dropdown-container'>
       <div className='row select-container'>

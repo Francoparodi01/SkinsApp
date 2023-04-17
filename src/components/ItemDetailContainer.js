@@ -3,7 +3,6 @@ import ItemDetail from "./ItemDetail";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
-import ItemCount from "./ItemCount";
 
 const ItemDetailContainer = ( {product} ) => {
   const [productDetail, setProductDetail] = useState({})
@@ -21,7 +20,6 @@ const ItemDetailContainer = ( {product} ) => {
   if (!productDetail) {
     return <Loader/>
   }
-
   return <ItemDetail item={productDetail} />;
 }
   export default ItemDetailContainer;

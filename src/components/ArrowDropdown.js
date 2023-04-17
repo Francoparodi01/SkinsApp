@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import DropdownMenu from './DropdownMenu';
-import {TfiMenu} from 'react-icons/tfi'
-import { useNavigate } from 'react-router-dom';
 import {AiOutlineSearch} from 'react-icons/ai'
 
 const ArrowDropdown = ({item, product}) => { 

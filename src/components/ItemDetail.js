@@ -6,7 +6,6 @@ import "../App.css"
 const ItemDetail = ({ item }) => {
   const { addProduct } = useContext(CartContext);
   const [count, setCount] = useState(1);
-  const [currentStock, setCurrentStock] = useState(item.stock);
   const [goToCart, setGoToCart] = useState(false);
 
   const onAdd = (quantity) =>{
