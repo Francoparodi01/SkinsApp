@@ -257,5 +257,3 @@ export const Loader = ({ size = "100px" }) => {
     );
   };
   
-
-export default Loader
