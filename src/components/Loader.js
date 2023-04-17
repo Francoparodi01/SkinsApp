@@ -256,6 +256,6 @@ export const Loader = ({ size = "100px" }) => {
       </div>
     );
   };
-  asidjaisdjaisd
+  
 
 export default Loader
