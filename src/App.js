@@ -18,18 +18,19 @@ export const CartContext = React.createContext('');
 
 function App() {
   return(
-    <BrowserRouter>
-        <CartProvider>
-          <Navb/>
-            <Routes>
-              <Route path="/" element={<ItemListContainer/>}/>
-              <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
-              <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
-              <Route path='/cart' element={<Cart/>}/>
-            </Routes>
-        </CartProvider>
-          <Footer/>
-    </BrowserRouter>
+    
+    <>
+      <CartProvider>
+        <Navb/>
+          <Routes>
+            <Route path="/" element={<ItemListContainer/>}/>
+            <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
+            <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+          </Routes>
+      </CartProvider>
+      <Footer/>
+    </>
   );
 }
 
